@@ -33,3 +33,21 @@
     transform: rotate(360deg);
   }
 }
+
+.ant-layout-sider-trigger {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  height: 48px;
+  color: #fff;
+  line-height: 48px;
+  text-align: center;
+  background: #006400;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+  background-color: #ADFF2F;
+}

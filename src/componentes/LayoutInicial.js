@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 
 const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
+
 
 class LayoutInicial extends React.Component {
   state = {
@@ -16,14 +16,9 @@ class LayoutInicial extends React.Component {
 
   render() {
     return (
-      <Layout style={{ minHeight: '100vh'}}>
-        <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-          <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <Menu.Item key="1">
-              <Icon type="" />
-              <span></span>
-            </Menu.Item>
+      <Layout style={{ minHeight: '100vh'}} >
+        <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse} style={{background: '#006400'}}>
+          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" style={{background: '#006400'}}>
             <Menu.Item key="1">
               <Icon type="user" />
               <span>Atletas</span>
@@ -39,12 +34,12 @@ class LayoutInicial extends React.Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: 'green', padding: 0 }} />
+          <Header style={{ background: '#32CD32	', padding: 0 }} />
           <Content style={{ margin: '0 16px' }}>
             
            
           </Content>
-          <Footer style={{ textAlign: 'center', background: 'green' }}>Ant Design ©2018 Created by Ant UED</Footer>
+          <Footer style={{ textAlign: 'center', background: '#32CD32' }}>Please use the Song</Footer>
         </Layout>
       </Layout>
     );
