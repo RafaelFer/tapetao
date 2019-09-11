@@ -36,7 +36,7 @@ class LayoutInicial extends React.Component {
         <Layout>
           <Header style={{ background: '#32CD32	', padding: 0 }} />
           <Content style={{ margin: '0 16px' }}>
-            TESTE 123456S
+              ATLEAS ASDASKDPOASKDPOA
           </Content>
           <Footer style={{ textAlign: 'center', background: '#32CD32' }}>Please use the Song</Footer>
         </Layout>
