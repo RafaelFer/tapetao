@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import {Link} from 'react-router-dom';
+import CadastroAtleta from './cadastro/CadastroAtleta';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -45,7 +46,7 @@ class LayoutInicial extends React.Component {
         <Layout>
           <Header style={{ background: '#32CD32	', padding: 0 }} />
           <Content style={{ margin: '0 16px' }}>
-              LAYOUT CADASTRO ATLETAS
+            <CadastroAtleta></CadastroAtleta>
           </Content>
           <Footer style={{ textAlign: 'center', background: '#32CD32' }}>Please use the Song</Footer>
         </Layout>
