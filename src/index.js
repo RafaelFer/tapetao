@@ -4,13 +4,19 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import LayoutAtletas from './componentes/LayoutAtletas';
+import LayoutAtleta from './componentes/LayoutAtleta';
+import LayoutCadastro from './componentes/LayoutCadastro';
+import LayoutRanking from './componentes/LayoutRanking';
+import LayoutDesafio from './componentes/LayoutDesafio';
 
 ReactDOM.render(
     <BrowserRouter>
         <Switch>
-            <Route path="/" exact={true} component={App} />
-             <Route path="/teste" exact={true} component={LayoutAtletas} />
+            <Route path="/"         exact={true} component={App} />
+            <Route path="/cadastro" exact={true} component={LayoutCadastro} />
+            <Route path="/atletas"   exact={true} component={LayoutAtleta} />
+            <Route path="/ranking"  exact={true} component={LayoutRanking} />
+            <Route path="/desafio"  exact={true} component={LayoutDesafio} />
         </Switch>
     </ BrowserRouter>
     , document.getElementById('root'));
