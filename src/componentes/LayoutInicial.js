@@ -18,10 +18,10 @@ class LayoutInicial extends React.Component {
     return (
       <Layout style={{ minHeight: '100vh'}} >
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse} style={{background: '#006400'}}>
-          <MenuLayout></MenuLayout>
+          <MenuLayout selectedMenu = {this.props.selectedMenu}></MenuLayout>
         </Sider>
         <Layout>
-          <Header style={{ background: '#32CD32	', padding: 0 }} />
+          <Header style={{ background: '#32CD32	', padding: 0 }}/>
           <Content style={{ margin: '0 16px' }}>
              {this.props.children}
           </Content>

@@ -1,18 +1,22 @@
 
-import React, { Component } from 'react';
-import { Input, Tooltip, Icon, DatePicker,Card, Button  } from 'antd';
+import React from 'react';
+import { Input, DatePicker,Card, Button  } from 'antd';
 import UploadFoto from './UploadFoto';
 import LayoutInicial from "../../componentes/LayoutInicial"
 
-const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 const { TextArea } = Input;
+
 
 class CadastroAtleta extends React.Component {
 
+    componentDidMount(){
+        console.log(this.props)
+    }
     
     render(){
         return (
-            <LayoutInicial>
+            <LayoutInicial selectedMenu = {this.props.match.path}>
+                <h1>Cadastro de Atletas</h1>
                 <Card style={{ width: 800 }}>
                     <Input placeholder="Nome" style={{ width: 350 }} ></Input><br/>
                     <br></br>
