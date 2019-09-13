@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
-import { Input, Tooltip, Icon, DatePicker,Card  } from 'antd';
+import { Input, Tooltip, Icon, DatePicker,Card, Button  } from 'antd';
+import UploadFoto from './UploadFoto';
+import LayoutInicial from "../../componentes/LayoutInicial"
 
 const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 const { TextArea } = Input;
@@ -10,7 +12,7 @@ class CadastroAtleta extends React.Component {
     
     render(){
         return (
-            <div>
+            <LayoutInicial>
                 <Card style={{ width: 800 }}>
                     <Input placeholder="Nome" style={{ width: 350 }} ></Input><br/>
                     <br></br>
@@ -18,9 +20,14 @@ class CadastroAtleta extends React.Component {
                     <br></br>
                     <DatePicker onChange={onChange} placeholder="Entrada do Atleta" /><br/>
                     <br></br>
-                    <TextArea rows={4} placeholder="Descrição do Atleta"/>
+                    <TextArea rows={4} placeholder="Descrição do Atleta"/><br/>
+                    <br></br>
+                    <UploadFoto></UploadFoto>
+                    <br/>
+                    <br></br>
+                    <Button type="primary" icon="save">Salvar Atleta</Button>
                 </Card>
-            </div>
+            </LayoutInicial>
 
         );
     }
@@ -29,6 +36,5 @@ class CadastroAtleta extends React.Component {
 function onChange(date, dateString) {
     console.log(date, dateString);
 }
-
 
 export default CadastroAtleta;

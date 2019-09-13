@@ -1,12 +1,18 @@
 import React from 'react';
-import LayoutAtleta from './componentes/LayoutAtleta';
+import ptBR from 'antd/es/locale/pt_BR';
+import LayoutInicial from './componentes/LayoutInicial'
+import { ConfigProvider } from 'antd';
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-     <LayoutAtleta>Layout Padrao</LayoutAtleta>
+     <ConfigProvider locale={ptBR}>
+       <LayoutInicial>
+        
+       </LayoutInicial>
+     </ConfigProvider>
     </div>
   );
 }

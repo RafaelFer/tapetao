@@ -4,20 +4,23 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import LayoutAtleta from './componentes/LayoutAtleta';
-import LayoutCadastro from './componentes/LayoutCadastro';
-import LayoutRanking from './componentes/LayoutRanking';
-import LayoutDesafio from './componentes/LayoutDesafio';
+import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import {Link} from 'react-router-dom';
+import CadastroAtleta from './componentes/cadastro/CadastroAtleta'
+
+
+const { Header, Content, Footer, Sider } = Layout;
 
 ReactDOM.render(
     <BrowserRouter>
-        <Switch>
-            <Route path="/"         exact={true} component={App} />
-            <Route path="/cadastro" exact={true} component={LayoutCadastro} />
-            <Route path="/atletas"   exact={true} component={LayoutAtleta} />
-            <Route path="/ranking"  exact={true} component={LayoutRanking} />
-            <Route path="/desafio"  exact={true} component={LayoutDesafio} />
-        </Switch>
+    <Switch>
+        <Route path="/"         exact={true} component={App} />
+        <Route path="/cadastro" exact={true} component={CadastroAtleta} />
+        <Route path="/atletas" exact={true} component={CadastroAtleta} />
+        <Route path="/ranking" exact={true} component={CadastroAtleta} />
+        <Route path="/desafios" exact={true} component={CadastroAtleta} />
+        
+    </Switch>
     </ BrowserRouter>
     , document.getElementById('root'));
 
