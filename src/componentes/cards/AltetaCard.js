@@ -27,7 +27,6 @@ class AltetaCard extends React.Component {
                 atletasCadastrados: atletas
               })
         });
-        console.log(this.state.atletasCadastrados)
     };
 
     render(){
@@ -37,25 +36,34 @@ class AltetaCard extends React.Component {
 
                 <h1>Atletas Cadastrados</h1>
                 <Row gutter={10}>
-                {this.state.atletasCadastrados.map((atletasCadastrados)=>
-                    
-                    <Col md={8}>
+                
+                {this.state.atletasCadastrados&&
+                    this.state.atletasCadastrados.map((atletasCadastrados)=>
+                    <Col md={6}>
                                 <Card style={{marginBottom: 10}}
+                                
                                     actions={[
                                     <Icon type="like" key="like" />,
                                     <Icon type="dislike" key="dislike" />
                                     ]}
+                                    size="small"    
                                 >
                                 <Meta
                                     avatar={<Avatar src={atletasCadastrados.imagem} />}
                                     title={atletasCadastrados.apelido}
-                                    description={atletasCadastrados.descricao}
+                                    description={
+
+                                        <div>
+                                            <strong>Posição: </strong>{atletasCadastrados.descricao}<br/>
+                                            <strong>Descrição do Jogador:</strong>{atletasCadastrados.descricao}
+                                            
+                                        </div>
+                                    }
                                 />
                                 </Card>           
                         </Col>
-                        
-                   
-                )}
+                )
+                }
                  </Row>
             </LayoutInicial>
 

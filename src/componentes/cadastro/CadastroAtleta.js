@@ -1,10 +1,11 @@
 
 import React from 'react';
-import { Input, DatePicker,Card, Button  } from 'antd';
+import { Input, DatePicker,Card, Button,Select} from 'antd';
 import UploadFoto from './UploadFoto';
 import LayoutInicial from "../../componentes/LayoutInicial"
 
 const { TextArea } = Input;
+const { Option } = Select;
 
 
 class CadastroAtleta extends React.Component {
@@ -21,6 +22,11 @@ class CadastroAtleta extends React.Component {
                     <Input placeholder="Nome" style={{ width: 350 }} ></Input><br/>
                     <br></br>
                     <Input placeholder="Apelido" style={{ width: 350 }} ></Input><br/>
+                    <br></br>
+                    <Select placeholder="Posição do Jogador" style={{ width: 200 }}>
+                        <Option value="1">Linha</Option>
+                        <Option value="2">Goleiro</Option>
+                    </Select><br/>
                     <br></br>
                     <DatePicker onChange={onChange} placeholder="Entrada do Atleta" /><br/>
                     <br></br>
