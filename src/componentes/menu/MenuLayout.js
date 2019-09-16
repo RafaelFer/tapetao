@@ -5,7 +5,7 @@ import _ from 'lodash';
 
 
 const INITIAL_STATE = { 
-  selectedKey: '0',
+  selectedKey: '1',
   menu:[
     {label:"Atletas",route:"/atletas",id:1,icon:"user"},
     {label:"New",route:"/cadastro",id:2,icon:"user-add"},
@@ -24,22 +24,20 @@ class MenuLayout extends React.Component {
   componentDidMount(){
 
     this.setState({
-      selectedKey: _.filter(this.state.menu,(o)=>{return o.route == this.props.selectedMenu})[0].id
+      selectedKey: _.filter(this.state.menu,(o)=>{  return o.route == this.props.selectedMenu})[0].id
     })
   }
 
   render() {
     return (  
           <Menu theme="dark" selectedKeys={[this.state.selectedKey.toString()]} mode="inline" style={{background: '#006400'}}>
-{this.state.menu.map((menuItem)=>
-  <Menu.Item key={menuItem.id}>
-  <Icon type={menuItem.icon} />
-  <span>{menuItem.label}</span>
-  <Link to={menuItem.route}></Link>
-</Menu.Item>
-)}
-           
-
+            {this.state.menu.map((menuItem)=>
+              <Menu.Item key={menuItem.id}>
+              <Icon type={menuItem.icon} />
+              <span>{menuItem.label}</span>
+              <Link to={menuItem.route}></Link>
+          </Menu.Item>
+      )}
           </Menu>
     );
   }
