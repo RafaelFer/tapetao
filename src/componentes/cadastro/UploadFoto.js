@@ -43,5 +43,4 @@ class UploadFoto extends React.Component {
     }
 }
 
-
 export default UploadFoto;

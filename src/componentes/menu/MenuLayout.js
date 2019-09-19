@@ -9,8 +9,9 @@ const INITIAL_STATE = {
   menu:[
     {label:"Atletas",route:"/atletas",id:1,icon:"user"},
     {label:"New",route:"/cadastro",id:2,icon:"user-add"},
-    {label:"Ranking",route:"/ranking",id:3,icon:"crown"},
-    {label:"Desafios",route:"/desafios",id:4,icon:"star"},
+    {label:"Jogos",route:"/jogo",id:3,icon:"skin"},
+    {label:"Ranking",route:"/ranking",id:4,icon:"crown"},
+    {label:"Desafios",route:"/desafios",id:5,icon:"star"},
   ]
 }
 
@@ -23,9 +24,9 @@ class MenuLayout extends React.Component {
 
   componentDidMount(){
 
-    this.setState({
+   /*  this.setState({
       selectedKey: _.filter(this.state.menu,(o)=>{return o.route === this.props.selectedMenu})[0].id
-    })
+    }) */
   }
 
   render() {

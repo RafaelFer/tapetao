@@ -1,7 +1,7 @@
 
 import React from 'react';
 import LayoutInicial from "../../componentes/LayoutInicial"
-import { Card, Icon, Avatar, Row, Col } from 'antd';
+import { Card, Icon, Avatar, Row, Col, Spin } from 'antd';
 
 const { Meta } = Card;
 
@@ -19,10 +19,9 @@ class AltetaCard extends React.Component {
 
     componentDidMount(){
         
-        fetch(`http://www.mocky.io/v2/5d7fe85030000065008e6c78`)
+        fetch(`http://www.mocky.io/v2/5d837e85340000cd4ff4a559`)
         .then(response => response.json())
         .then(atletas => {
-            console.log('entrou no then');
             this.setState({
                 atletasCadastrados: atletas
               })
@@ -48,7 +47,13 @@ class AltetaCard extends React.Component {
                                 >
                                 <Meta
                                     avatar={<Avatar src={atletasCadastrados.imagem} />}
-                                    title={atletasCadastrados.apelido}
+                                    title={
+                                        <div>
+                                            <strong>{atletasCadastrados.apelido} 
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            </strong>{<Avatar size='samll' src={'http://t3.gstatic.com/images?q=tbn:ANd9GcRDR2BDQwMK5oF8OW4xRC1MxankAjyPpsK77kTAXebhHJYyIBpL'} />}<br/>
+                                        </div>
+                                    }    
                                     description={
                                         <div>
                                             <strong>Posição: </strong>{atletasCadastrados.descricao}<br/>
@@ -62,7 +67,6 @@ class AltetaCard extends React.Component {
                 }
                  </Row>
             </LayoutInicial>
-
         );
     }
 }

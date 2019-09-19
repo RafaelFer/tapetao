@@ -28,6 +28,15 @@ class CadastroAtleta extends React.Component {
                         <Option value="2">Goleiro</Option>
                     </Select><br/>
                     <br></br>
+                    <Select placeholder="Time do Jogador" style={{ width: 200 }}>
+                        <Option value="1">Palmeiras</Option>
+                        <Option value="2">Corinthians</Option>
+                        <Option value="3">Palmeiras</Option>
+                        <Option value="4">Santos</Option>
+                        <Option value="5">Flamengo</Option>
+                        <Option value="6">Outro</Option>
+                    </Select><br/>
+                    <br></br>
                     <DatePicker onChange={onChange} placeholder="Entrada do Atleta" /><br/>
                     <br></br>
                     <TextArea rows={4} placeholder="Descrição do Atleta"/><br/>
