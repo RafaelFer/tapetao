@@ -19,7 +19,7 @@ class AltetaCard extends React.Component {
 
     componentDidMount(){
         
-        fetch(`http://www.mocky.io/v2/5d837e85340000cd4ff4a559`)
+        fetch(`http://www.mocky.io/v2/5d8393c93400006420f4a648`)
         .then(response => response.json())
         .then(atletas => {
             this.setState({
@@ -51,13 +51,14 @@ class AltetaCard extends React.Component {
                                         <div>
                                             <strong>{atletasCadastrados.apelido} 
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            </strong>{<Avatar size='samll' src={'http://t3.gstatic.com/images?q=tbn:ANd9GcRDR2BDQwMK5oF8OW4xRC1MxankAjyPpsK77kTAXebhHJYyIBpL'} />}<br/>
+                                            </strong>{<Avatar size='samll' src={atletasCadastrados.imagemTime} />}<br/>
                                         </div>
                                     }    
                                     description={
                                         <div>
-                                            <strong>Posição: </strong>{atletasCadastrados.descricao}<br/>
-                                            <strong>Descrição do Jogador: </strong>{atletasCadastrados.descricao}
+                                            <strong>Posição: </strong>{atletasCadastrados.posicao}<br/>
+                                            <strong>Caracteristicas: </strong>{atletasCadastrados.caracteristicas}<br/>
+                                            <strong>Descrição: </strong>{atletasCadastrados.descricao}
                                         </div>
                                     }
                                 />
