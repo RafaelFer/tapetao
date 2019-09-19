@@ -40,8 +40,6 @@ class AltetaCard extends React.Component {
                     <Col md={6}>
                                 <Card style={{marginBottom: 10}}
                                     actions={[       
-                                    <Icon type="like" key="like" />,
-                                    <Icon type="dislike" key="dislike" />
                                     ]}
                                     size="small"    
                                 >
