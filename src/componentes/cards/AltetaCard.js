@@ -19,7 +19,7 @@ class AltetaCard extends React.Component {
 
     componentDidMount(){
         
-        fetch(`http://www.mocky.io/v2/5d8393c93400006420f4a648`)
+        fetch(`http://www.mocky.io/v2/5d83b6e03400009762f4a73a`)
         .then(response => response.json())
         .then(atletas => {
             this.setState({
