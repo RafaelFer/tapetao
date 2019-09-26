@@ -25,7 +25,7 @@ class MenuLayout extends React.Component {
   componentDidMount(){
 
     this.setState({
-      selectedKey: this.props.selectedMenu == "/" ? 1 : _.filter(this.state.menu,(o)=>{return o.route === this.props.selectedMenu})[0].id
+      selectedKey: this.props.selectedMenu === "/" ? 1 : _.filter(this.state.menu,(o)=>{return o.route === this.props.selectedMenu})[0].id
     }) 
   
   }

@@ -1,14 +1,17 @@
 
 import React from 'react';
 import LayoutInicial from "../LayoutInicial"
-import { Card, Icon, Avatar, Row, Col, Spin } from 'antd';
+import { Card,  Avatar, Row, Col } from 'antd';
+import FireStoreParser from 'firestore-parser'
 
 const { Meta } = Card;
 
 
 const INITIAL_STATE = {
-    atletasCadastrados: [] 
+    atletasCadastrados: []
 }
+
+
 
 class AtletaCard extends React.Component {
     
@@ -18,30 +21,41 @@ class AtletaCard extends React.Component {
     }
 
     componentDidMount(){
-        
-        fetch(`http://www.mocky.io/v2/5d83b6e03400009762f4a73a`)
+
+        fetch(`https://tapetao-699a1.firebaseio.com/atletas.json`)
         .then(response => response.json())
-        .then(atletas => {
-            this.setState({
-                atletasCadastrados: atletas
-              })
-        });
+        .then(json => FireStoreParser(json))
+        .then(json => console.log(json));
+        
+    
+
+        //fetch(`https://tapetao-699a1.firebaseio.com/atletas.json`)
+        //fetch(`http://www.mocky.io/v2/5d83b6e03400009762f4a73a`)
+        //.then(response => response.json())
+        //.then(atletas => {
+        //    console.log(atletas);
+        //    console.log(atletas.mapValue);
+        //    this.setState({
+        //        atletasCadastrados: atletas
+        //      })
+        //});
     };
 
     render(){
         return (
             
-            <LayoutInicial selectedMenu = {this.props.match.path}>
+            <LayoutInicial selectedMenu = {this.props.match.path}>  
                 <h1>Atletas Cadastrados</h1>
-                <Row gutter={10}>
-                {console.log(this.state.atletasCadastrados)}
+                
+                <Row gutter={10}> 
                 {this.state.atletasCadastrados &&
                     this.state.atletasCadastrados.map((atletasCadastrados)=>
-                    <Col md={6}>
+                    <Col md={6} >
                                 <Card style={{marginBottom: 10}}
                                     actions={[       
                                     ]}
                                     size="small"    
+                                   
                                 >
                                 <Meta
                                     avatar={<Avatar src={atletasCadastrados.imagem} />}
