@@ -7,14 +7,14 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 
 import CadastroAtleta from './componentes/cadastro/CadastroAtleta'
-import AltetaCard from './componentes/cards/AltetaCard';
+import AtletaCard from './componentes/cards/AtletaCard';
 
 ReactDOM.render(
     <BrowserRouter>
     <Switch>
-        <Route path="/"         exact={true} component={AltetaCard} />
+        <Route path="/"         exact={true} component={AtletaCard} />
         <Route path="/cadastro" exact={true} component={CadastroAtleta} />
-        <Route path="/atletas" exact={true} component={AltetaCard} />
+        <Route path="/atletas" exact={true} component={AtletaCard} />
     </Switch>
     </ BrowserRouter>
     , document.getElementById('root'));

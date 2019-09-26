@@ -1,16 +1,16 @@
 
 import React from 'react';
-import LayoutInicial from "../../componentes/LayoutInicial"
+import LayoutInicial from "../LayoutInicial"
 import { Card, Icon, Avatar, Row, Col, Spin } from 'antd';
 
 const { Meta } = Card;
 
 
 const INITIAL_STATE = {
-    atletasCadastrados: []
+    atletasCadastrados: [] 
 }
 
-class AltetaCard extends React.Component {
+class AtletaCard extends React.Component {
     
     constructor(props){
         super(props);
@@ -32,9 +32,9 @@ class AltetaCard extends React.Component {
         return (
             
             <LayoutInicial selectedMenu = {this.props.match.path}>
-
                 <h1>Atletas Cadastrados</h1>
                 <Row gutter={10}>
+                {console.log(this.state.atletasCadastrados)}
                 {this.state.atletasCadastrados &&
                     this.state.atletasCadastrados.map((atletasCadastrados)=>
                     <Col md={6}>
@@ -71,4 +71,4 @@ class AltetaCard extends React.Component {
 }
 
 
-export default AltetaCard;
+export default AtletaCard;

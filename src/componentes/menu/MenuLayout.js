@@ -24,14 +24,15 @@ class MenuLayout extends React.Component {
 
   componentDidMount(){
 
-   /*  this.setState({
-      selectedKey: _.filter(this.state.menu,(o)=>{return o.route === this.props.selectedMenu})[0].id
-    }) */
+    this.setState({
+      selectedKey: this.props.selectedMenu == "/" ? 1 : _.filter(this.state.menu,(o)=>{return o.route === this.props.selectedMenu})[0].id
+    }) 
+  
   }
 
   render() {
     return (  
-          <Menu theme="dark" selectedKeys={[this.state.selectedKey.toString()]} mode="inline" style={{background: '#006400'}}>
+          <Menu theme="dark" selectedKeys={[this.state.selectedKey && this.state.selectedKey.toString()]} mode="inline" style={{background: '#006400'}}>
             {this.state.menu.map((menuItem)=>
               <Menu.Item key={menuItem.id}>
               <Icon type={menuItem.icon} />

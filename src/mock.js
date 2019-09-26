@@ -1,11 +1,11 @@
 [{
     "nome": "Rafael",
     "apelido": "Salgadinho",
-   "posicao": "Linha",
-   "time": "São Paulo",
+    "posicao": "Linha",
+    "time": "São Paulo",
     "descricao": "Joga pela esquerda",
-   "caracteristicas":"Chute Forte, Passe Certo",
-   "imagemTime": "http://t3.gstatic.com/images?q=tbn:ANd9GcRDR2BDQwMK5oF8OW4xRC1MxankAjyPpsK77kTAXebhHJYyIBpL",
+    "caracteristicas":"Chute Forte, Passe Certo",
+    "imagemTime": "http://t3.gstatic.com/images?q=tbn:ANd9GcRDR2BDQwMK5oF8OW4xRC1MxankAjyPpsK77kTAXebhHJYyIBpL",
     "imagem": "https://media.licdn.com/dms/image/C4E03AQER876hh3K5vg/profile-displayphoto-shrink_200_200/0?e=1574294400&v=beta&t=GFCWqz8X1bideuxTljOD5L1QeIPpjCjLEWKfL-PGWDY"
 },
 {
