@@ -1,44 +1,46 @@
-
 import React from 'react';
 import LayoutInicial from "../LayoutInicial"
 import { Card,  Avatar, Row, Col } from 'antd';
-import FireStoreParser from 'firestore-parser'
+import _ from 'lodash';
+import firebase from '../../containers/Firebase/Firebase'
+import { app } from 'firebase';
+import Firebase from '../../containers/Firebase/Firebase';
 
 const { Meta } = Card;
-
 
 const INITIAL_STATE = {
     atletasCadastrados: []
 }
-
-
 
 class AtletaCard extends React.Component {
     
     constructor(props){
         super(props);
         this.state = {...INITIAL_STATE};
+        this.firebaseDao = new Firebase();  
     }
 
     componentDidMount(){
-
-        fetch(`https://tapetao-699a1.firebaseio.com/atletas.json`)
-        .then(response => response.json())
-        .then(json => FireStoreParser(json))
-        .then(json => console.log(json));
+       
+        this.firebaseDao.getAllAtletas()
+        .then((data)=>{
+            console.log(data);
+        })
+        .catch((e)=>{
+            console.log("deu ruim");
+            console.log(e);
+        })
         
-    
-
         //fetch(`https://tapetao-699a1.firebaseio.com/atletas.json`)
-        //fetch(`http://www.mocky.io/v2/5d83b6e03400009762f4a73a`)
         //.then(response => response.json())
-        //.then(atletas => {
-        //    console.log(atletas);
-        //    console.log(atletas.mapValue);
+       // .then(atletas => {
+        //       console.log(_.values(atletas));
         //    this.setState({
-        //        atletasCadastrados: atletas
-        //      })
-        //});
+        ///        atletasCadastrados: _.values(atletas)
+       //       })
+       // });
+
+
     };
 
     render(){
@@ -54,8 +56,7 @@ class AtletaCard extends React.Component {
                                 <Card style={{marginBottom: 10}}
                                     actions={[       
                                     ]}
-                                    size="small"    
-                                   
+                                    size="small"      
                                 >
                                 <Meta
                                     avatar={<Avatar src={atletasCadastrados.imagem} />}
