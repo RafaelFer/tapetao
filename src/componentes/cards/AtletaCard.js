@@ -1,10 +1,7 @@
 import React from 'react';
 import LayoutInicial from "../LayoutInicial"
 import { Card,  Avatar, Row, Col } from 'antd';
-import _ from 'lodash';
-import firebase from '../../containers/Firebase/Firebase'
-import { app } from 'firebase';
-import Firebase from '../../containers/Firebase/Firebase';
+import firebase from '../../containers/Firebase/Firebase';
 
 const { Meta } = Card;
 
@@ -12,40 +9,40 @@ const INITIAL_STATE = {
     atletasCadastrados: []
 }
 
+let atletas = [];
+
 class AtletaCard extends React.Component {
     
     constructor(props){
         super(props);
         this.state = {...INITIAL_STATE};
-        this.firebaseDao = new Firebase();  
     }
-
+    
     componentDidMount(){
-       
-        this.firebaseDao.getAllAtletas()
-        .then((data)=>{
-            console.log(data);
-        })
-        .catch((e)=>{
-            console.log("deu ruim");
-            console.log(e);
-        })
         
-        //fetch(`https://tapetao-699a1.firebaseio.com/atletas.json`)
-        //.then(response => response.json())
-       // .then(atletas => {
-        //       console.log(_.values(atletas));
-        //    this.setState({
-        ///        atletasCadastrados: _.values(atletas)
-       //       })
-       // });
+        const db = firebase.firestore();
 
-
+        db.settings({
+            timestampsInSnapshots: true
+          });
+        
+          let atletasRef = db.collection('atletas');
+                 atletasRef.get()
+                .then(snapshot => {
+                     snapshot.forEach(doc => { 
+                        atletas = atletas.concat(doc.data())
+                    });
+                    this.setState({
+                        atletasCadastrados: atletas
+                    })
+                })
+                .catch(err => {
+                    console.log('Error getting documents', err);
+                });
     };
 
     render(){
-        return (
-            
+        return (  
             <LayoutInicial selectedMenu = {this.props.match.path}>  
                 <h1>Atletas Cadastrados</h1>
                 
@@ -69,6 +66,7 @@ class AtletaCard extends React.Component {
                                     }    
                                     description={
                                         <div>
+                                            <strong>Nome: </strong>{atletasCadastrados.nome}<br/>
                                             <strong>Posição: </strong>{atletasCadastrados.posicao}<br/>
                                             <strong>Caracteristicas: </strong>{atletasCadastrados.caracteristicas}<br/>
                                             <strong>Descrição: </strong>{atletasCadastrados.descricao}

@@ -1,11 +1,4 @@
-import app from "firebase/app";
-import "firebase/auth";
-import 'firebase/database';
-
-
-
-import "firebase/auth";
-import "firebase/database";
+import firebase from 'firebase';
 
 const config = {
     apiKey: "AIzaSyCjlbKCtGX-DXkpwdpg67Xmmb-eTXeE0h0",
@@ -18,21 +11,8 @@ const config = {
     measurementId: "G-9DCPSB1GFX"
 };
 
-class Firebase {
-    constructor() {
-        app.initializeApp(config);
+firebase.initializeApp(config);
 
-        this.auth = app.auth();
-        this.db = app.database();
-    }
+export default firebase;
 
 
-    getAllAtletas(){
-        return new Promise((resolve, reject)=>{
-            let ref = this.db.ref('atletas');
-            resolve(ref).catch(reject("erro"))
-        }) 
-    }
-
-}
-export default Firebase;
