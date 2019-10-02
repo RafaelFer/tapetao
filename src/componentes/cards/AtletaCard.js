@@ -45,7 +45,6 @@ class AtletaCard extends React.Component {
         return (  
             <LayoutInicial selectedMenu = {this.props.match.path}>  
                 <h1>Atletas Cadastrados</h1>
-                
                 <Row gutter={10}> 
                 {this.state.atletasCadastrados &&
                     this.state.atletasCadastrados.map((atletasCadastrados)=>
